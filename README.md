@@ -16,7 +16,7 @@ npm install telcom
 ```
 var TelcomClient = require('telcom');
 
-var clientTwilio = new TelcomClient({
+var client = new TelcomClient({
   provider : 'twilio',
   sid : 'ACCOUNT_SID',
   token : 'AUTH_TOKEN'
