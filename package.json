@@ -1,7 +1,7 @@
 {
   "name": "telcom",
-  "version": "0.0.0",
-  "description": "Abstraction layer between Twilio and Plivo as well as future phone integration services.",
+  "version": "0.0.1",
+  "description": "Abstraction layer between Twilio and Plivo.",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -15,11 +15,16 @@
     "plivo",
     "telecommunications",
     "phone",
-    "sms"
+    "sms",
+    "telcom"
   ],
   "author": "Adam Magaluk <AdamMagaluk@gmail.com>",
-  "license": "BSD",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/adammagaluk/telcom/issues"
+  },
+  "dependencies": {
+    "twilio": "~1.1.4",
+    "extend": "~1.2.1"
   }
 }
