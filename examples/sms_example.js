@@ -2,17 +2,18 @@ var TelcomClient = require('../index');
 var config = require('../config');
 
 var client = new TelcomClient({
-  provider : 'twilio',
+  provider : config.provider,
   sid : config.sid,
   token : config.token
 });
 
 client.sms({
-  to : "+15551234567",
-  from : '+15551234568',
-  body : 'Hello from Telcom'
-},function(error,ret){
-  console.log(error);
+  to : "+15551230885",
+  from : '+15551235659',
+  body : 'Hello from Telcom ' + config.provider
+},function(err,ret){
+  if(err){
+    console.error("failed to send message");
+  }
+  console.log(ret);
 });
-
-

@@ -13,7 +13,7 @@ npm install telcom
 
 ## Usage
 
-```
+```js
 var TelcomClient = require('telcom');
 
 var client = new TelcomClient({
