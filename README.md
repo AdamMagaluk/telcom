@@ -61,10 +61,10 @@ app.get('/phone/sms',TelcomClient.onSms(function(req,res,sms){
 
   /* sms
   {
-   to : '+15557894561',
-     to : '+15557894561'
-     to : '+15557894561'
-     _clientReques : <Object> of original request.
+    to : '+15557894561',
+    from : '+15557894561',
+    body : 'This is a text',
+    _clientReques : <Object> of original request.
   }
   */
 
