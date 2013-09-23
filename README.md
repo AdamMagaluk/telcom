@@ -14,6 +14,7 @@ npm install telcom
 ## Usage
 
 ```js
+
 var TelcomClient = require('telcom');
 
 var client = new TelcomClient({
@@ -21,6 +22,14 @@ var client = new TelcomClient({
   sid : 'ACCOUNT_SID',
   token : 'AUTH_TOKEN'
 });
+
+```
+
+
+
+### Sending SMS
+
+```js
 
 client.sms({
   to : "+15551234567",
@@ -35,6 +44,36 @@ client.sms({
 });
 
 ```
+
+### Handle SMS Message URL
+
+Telcome provides a few methods for validating and normalizing the requests from
+both Plivo and Twilio. These methods currently only support Express but could be 
+modified slightly in the future to all other frameworks.
+
+```js
+
+// Add the middleware to validate request from Provider
+app.use(TelcomClient.expressValidate())
+
+// Add route with telcom.onSms handler to normalize data.
+app.get('/phone/sms',TelcomClient.onSms(function(req,res,sms){
+
+  /* sms
+  {
+   to : '+15557894561',
+     to : '+15557894561'
+     to : '+15557894561'
+     _clientReques : <Object> of original request.
+  }
+  */
+
+  // Handle normal logic
+
+}));
+
+```
+
 
 ### Current Providers
 
